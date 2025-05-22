@@ -1,0 +1,152 @@
+
+:root {
+  /* Panel */
+  --panel-bg: #1e1e1e;
+  --panel-radius: 12px;
+  --panel-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+
+  --display-bg: #272727;
+  --display-color: #fff;
+  --display-height: 60px;
+  --display-radius: 8px;
+  --display-shadow: inset 0 2px 5px rgba(0,0,0,0.3);
+
+
+  --btn-bg: #333;
+  --btn-color: #eee;
+  --btn-hover: #444;
+  --btn-radius: 8px;
+  --btn-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  --btn-size: 60px;
+
+
+  --op-bg: #f39c12;
+  --op-hover: #d35400;
+  --eq-bg: #27ae60;
+  --eq-hover: #1e8449;
+  --clear-bg: #e74c3c;
+  --clear-hover: #c0392b;
+  --del-bg: #fd7e14;
+  --del-hover: #e67e22;
+  --pct-bg: #3498db;
+  --pct-hover: #2980b9;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: #111;               /* fallback */
+  /* uncomment & set your own background image if desired:
+     background: url(./backg.jpg) no-repeat center/cover fixed;
+  */
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.calculator {
+  background: var(--panel-bg);
+  border-radius: var(--panel-radius);
+  box-shadow: var(--panel-shadow);
+  padding: 1rem;
+  width: 100%;
+  max-width: 320px;
+}
+
+
+#display {
+  width: 100%;
+  height: var(--display-height);
+  background: var(--display-bg);
+  color: var(--display-color);
+  font-size: 1.5rem;
+  text-align: right;
+  padding: 0 0.75rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: var(--display-radius);
+  box-shadow: var(--display-shadow);
+}
+
+#display:focus {
+  outline: none;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: var(--btn-size);
+  gap: 10px;
+}
+
+
+.btn {
+  background: var(--btn-bg);
+  color: var(--btn-color);
+  font-size: 1.2rem;
+  border: none;
+  border-radius: var(--btn-radius);
+  box-shadow: var(--btn-shadow);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn:hover {
+  background: var(--btn-hover);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+
+.btn.operator {
+  background: var(--op-bg);
+}
+.btn.operator:hover {
+  background: var(--op-hover);
+}
+
+.btn.equal {
+  background: var(--eq-bg);
+}
+.btn.equal:hover {
+  background: var(--eq-hover);
+}
+
+.btn.clear {
+  background: var(--clear-bg);
+}
+.btn.clear:hover {
+  background: var(--clear-hover);
+}
+
+.btn.del {
+  background: var(--del-bg);
+}
+.btn.del:hover {
+  background: var(--del-hover);
+}
+
+.btn.percent {
+  background: var(--pct-bg);
+}
+.btn.percent:hover {
+  background: var(--pct-hover);
+}
+
+
+.btn.zero {
+  grid-column: span 2;
+}
